@@ -39,4 +39,10 @@ CREATE TABLE goles(
   CONSTRAINT goles_fk1 FOREIGN KEY (id_equipo_casa,id_equipo_fuera) REFERENCES partidos(id_equipo_casa,id_equipo_fuera) ON DELETE CASCADE,
   CONSTRAINT goles_fk2 FOREIGN KEY (id_jugador) REFERENCES jugadores ON DELETE CASCADE
 );
+ALTER TABLE equipos MODIFY aforo CONSTRAINT equipos_nn3 NOT NULL;
+ALTER  TABLE  equipos MODIFY estadio CONSTRAINT equipos_nn4 NOT NULL;
+
+ALTER TABLE equipos MODIFY (ano_fundacion DATE);
+
+ALTER TABLE jugadores DROP CONSTRAINT jugadores_nn1;
 
