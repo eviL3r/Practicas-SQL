@@ -47,11 +47,11 @@ ALTER TABLE jugadores DROP CONSTRAINT jugadores_nn1;
 INSERT INTO EQUIPOS VALUES (1,'Cascorro F.C.','La Arenera','4000','1/1/1961','Cascorro De Arriba');
 INSERT INTO EQUIPOS VALUES (2,'Athlético Matalasleñas','Cerro Gálvez','1200','12/3/1970','Matalasleñas');
 
+INSERT INTO PARTIDOS VALUES (1,2,TO_DATE('05/11/2016','DD/MM/YYYY'),2,1,'Partido ganado por el Cascorro');
+
 INSERT INTO JUGADORES VALUES (4,'Amoribia','20/1/1990',1);
 INSERT INTO JUGADORES VALUES (9,'García','25/4/1991',2);
 INSERT INTO JUGADORES VALUES (7,'Pedrosa','12/9/1993',1);
-
-INSERT INTO PARTIDOS VALUES (1,2,TO_DATE('05/11/2016','DD/MM/YYYY'),2,1,'Partido ganado por el Cascorro');
 
 INSERT INTO GOLES VALUES (1,2,INTERVAL '23' MINUTE ,'Falta directa',4);
 INSERT INTO GOLES VALUES (1,2,INTERVAL '40' MINUTE ,'Penalti',9);
@@ -60,3 +60,10 @@ INSERT INTO GOLES VALUES (1,2,INTERVAL '1:10' HOUR TO MINUTE ,'Gran jugada perso
 
 
 
+UPDATE EQUIPOS SET nombre='Real Cascorro'WHERE nombre='Cascorro F.C.';
+UPDATE EQUIPOS SET AFORO=aforo+500;
+
+
+
+DELETE EQUIPOS;
+SELECT * FROM EQUIPOS;
